@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Lax</title>
+  </head>
+  <body>
+    <section class="intro">
+      <p class="scroll-text">Scroll Down</p>
+    </section>
+    <section class="anim">
+      <h1 class="lax" data-lax-preset="leftToRight-.1 fadeIn">Animation</h1>
+      <p class="desc lax" data-lax-preset="blurInOut fadeInOut">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem minus
+        dolorum ut?
+      </p>
+      <div class="box1 lax" data-lax-preset=""></div>
+      <div class="box2 lax" data-lax-scale="700 0, 500 1, 100 1, 0 0" data-lax-anchor="self"></div>
+    </section>
+    <section></section>
+
+    <script src="node_modules/lax.js/lib/lax.min.js"></script>
+    <script>
+      window.onload = function() {
+        lax.setup(); // init
+
+        document.addEventListener(
+          "scroll",
+          function(e) {
+            lax.update(window.scrollY); // update every scroll
+          },
+          false
+        );
+      };
+    </script>
+  </body>
+</html>
